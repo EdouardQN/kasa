@@ -1,0 +1,15 @@
+.card-container{
+    background-color: #F6F6F6;
+    border-radius: 18px;
+    padding: 32px;
+    margin: 32px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media only screen and (max-width: 600px){
+    .card-container{
+        grid-template-columns: 1fr;
+    }
+}

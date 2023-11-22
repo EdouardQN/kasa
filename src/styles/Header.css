@@ -1,0 +1,29 @@
+.header-main{
+    max-height: 54px;
+    margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 600px){
+    .header-main{
+        font-size: 12px;
+        max-height: 48px;
+        margin-bottom: 16px;
+    }
+}
+
+.header-main-nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-main-logo{
+    margin-right: auto;
+    width: 150px;
+}
+
+@media only screen and (max-width: 600px){
+    .header-main-logo{
+        width: 80px;
+    }
+}

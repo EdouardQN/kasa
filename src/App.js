@@ -1,11 +1,35 @@
-import './App.css';
+import {
+  createBrowserRouter, 
+  createRoutesFromElements,
+  Route, 
+  RouterProvider
+} from 'react-router-dom'
+
+// pages
+import Home from './pages/Home'
+import About from './pages/About'
+import Logement from './pages/Logement'
+import Erreur404 from './pages/Erreur404'
+
+//layout
+import Root from './layout/Root'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="logement" element={<Logement />} />
+      
+      <Route path="*" element={<Erreur404 />} />
+    </Route>
+  )
+)
 
 function App() {
   return (
-    <div className="App">
-     Ouais Salut
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
-export default App;
+export default App
