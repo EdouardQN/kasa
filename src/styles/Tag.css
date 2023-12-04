@@ -1,0 +1,23 @@
+.tag{
+    background-color: #FF6060;
+    padding: 4px 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    
+}
+
+@media only screen and (max-width: 600px){
+    .tag{
+        width: 80px;
+        padding: 2px 14px;
+        font-size: 10px;
+
+    }
+    
+}
+
+.tag-name{
+    color: white;
+}

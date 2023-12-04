@@ -1,6 +1,7 @@
 .header-main{
     max-height: 54px;
     margin-bottom: 32px;
+    padding: 32px 0;
 }
 
 @media only screen and (max-width: 600px){

@@ -1,0 +1,27 @@
+.stars{
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.stars svg{
+    fill: #C4C4C4;
+    width: 24px;
+    height: 24px;
+}
+
+@media only screen and (max-width: 600px){
+    .stars{
+        gap: 6px;
+    }
+
+    .stars svg{
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.stars svg.red{
+    fill: #FF6060;
+}
+

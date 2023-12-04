@@ -2,8 +2,8 @@
     height: 240px;
     display: flex;
     justify-content: flex-start;
-    align-items: end;
-    background: #FF6060;
+    align-items: flex-end;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
     border-radius: 10px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .card-title{
-    width: 50%;
+    width: 60%;
     padding: 16px;
     color: white;
 }

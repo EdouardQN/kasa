@@ -1,0 +1,117 @@
+.logement{
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px){
+    .logement{
+        flex-direction: column;
+        margin: 8px 0;
+    }
+}
+
+.logement-title{
+    color: #FF6060;
+}
+
+.logement-title-head{
+    font-size: 36px;
+}
+
+.logement-title-sub{
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px){
+    .logement-title-head{
+        font-size: 24px;
+    }
+    
+    .logement-title-sub{
+        font-size: 14px;
+    }
+
+}
+
+.logement-host{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logement-host-name{
+    display: flex;
+    flex-direction: row;
+    color: #FF6060;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /* width: 45%; */
+}
+
+.logement-host-detail{
+    width: 50%;
+    text-align: end;
+    margin-right: 4%;
+}
+
+.logement-host-picture{
+    width: 64px;
+    border-radius: 50px;
+}
+
+@media only screen and (max-width: 600px){
+    .logement-host{
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
+        order: 2;
+    }
+
+    .logement-host-name{
+        order: 1;
+        font-size: 10px;
+        justify-content: flex-end;
+    }
+    .logement-host-picture{
+        width: 32px;
+    }
+}
+
+.logement-dropdowns{
+    display: flex;
+    gap: 32px;
+    margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 600px){
+    .logement-dropdowns{
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 0;
+    }
+
+    .logement-dropdowns:last-child{
+        margin-bottom: 80px;
+    }
+}
+
+.tag-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 16px 0; 
+}
+
+@media only screen and (max-width: 600px){
+    .tag-container{
+        margin-left: 0 !important;
+        padding-left: 0;
+    }
+}
