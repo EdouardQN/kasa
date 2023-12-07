@@ -20,7 +20,6 @@
     font-size: 20px;
     text-align: start;
 }
-
 @media only screen and (max-width: 600px){
     .dropdown-btn{
         font-size: 12px;
@@ -31,6 +30,11 @@
     position: absolute;
     right: 8px;
 }
+
+.dropdown-btn-icon.rotated{
+    transform: rotate(180deg);
+}
+
 
 @media only screen and (max-width: 600px){
     .dropdown-btn-icon{
@@ -43,16 +47,21 @@
 .dropdown-description-smaller{
     display: none;
     background-color: #F6F6F6;
-    color: black;
+    color: #FF6060;
     border-radius: 4px;
     padding: 16px;
 }
 
 .dropdown-description-smaller{
-    height: 112px;
+    width: inherit;
+    max-height: 150px;
 }
 
 @media only screen and (max-width: 600px){
+    .dropdown-description,
+    .dropdown-description-smaller{
+        font-size: 12px;
+    }
     .dropdown-description-smaller{
         height: auto;
     }

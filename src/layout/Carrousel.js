@@ -17,9 +17,11 @@ export default function Carrousel( {images} ) {
 
   return (
     <div className='carrousel-container'>
-      <button className='carrousel-arrow arrow-left' onClick={prevImage}>
-        <img src={arrowLeft} alt="Left Arrow" />
-      </button>
+      { images.length > 1 &&
+        <button className='carrousel-arrow arrow-left' onClick={prevImage}>
+          <img src={arrowLeft} alt="Left Arrow" />
+        </button>    
+      }
 
       <div className='carrousel-images-container'>
         {images.map((image, index) => (
@@ -27,31 +29,17 @@ export default function Carrousel( {images} ) {
             {image}
           </div>
         ))}
+        {images.length > 1 &&  <span className='carrousel-index'>{currentIndex + 1}/{images.length}</span>}
+       
       </div>
 
-      <span className='carrousel-index'>{currentIndex + 1}/{images.length}</span>
 
-      <button className='carrousel-arrow arrow-right' onClick={nextImage}>
-        <img src={arrowRight} alt="Right Arrow" />
-      </button>
+      { images.length > 1 &&
+        <button className='carrousel-arrow arrow-right' onClick={nextImage}>
+          <img src={arrowRight} alt="Right Arrow" />
+        </button> 
+      }
+      
     </div>
-    // <div className='carrousel-container'>
-    //     <button className='carrousel-arrow arrow-left' onClick={prevImage}>
-    //         <img src={arrowLeft} />
-    //     </button>
-
-    //     {images.map((image, index) => (
-    //     <div key={index} className={`carrousel-img ${index === currentIndex ? "active" : ""}`}>
-    //       {image}
-    //     </div>
-    //     ))}
-        
-    //     <span className='carrousel-index'>1/4</span>
-
-    //     <button className='carrousel-arrow arrow-right' onClick={nextImage}>
-    //         <img src={arrowRight} />
-    //     </button>
-        
-    // </div>
   )
 }

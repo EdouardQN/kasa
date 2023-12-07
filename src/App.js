@@ -19,7 +19,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="logement" element={<Logement />} />
+      <Route path="/logement/:id" element={<Logement />} />
       
       <Route path="*" element={<Erreur404 />} />
     </Route>

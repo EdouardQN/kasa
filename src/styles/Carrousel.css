@@ -9,7 +9,6 @@
         position: static;
         height:250px;    
     }
-
 }
 
 .carrousel-images-container{
@@ -43,7 +42,6 @@
     } 
 }
 
-
 .active{
     opacity: 1;
 }
@@ -73,11 +71,11 @@
 }
 
 .carrousel-arrow.arrow-left{
-    left:50px;
+    left:10px;
 }
 
 .carrousel-arrow.arrow-right{
-    right: 50px;
+    right: 10px;
 }
 
 @media only screen and (max-width: 600px){

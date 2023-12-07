@@ -1,4 +1,5 @@
-.banner{
+.banner,
+.banner-about{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +13,13 @@
     background-size: cover; 
 }
 
+.banner-about{
+   background-image: url("../assets/banner-img-2.png");
+}
+
 @media only screen and (max-width: 600px){
-    .banner{
+    .banner,
+    .banner-about{
         height: 80px;
         justify-content: flex-start;
         padding-left: 32px;

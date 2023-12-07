@@ -1,21 +1,25 @@
-import React from 'react'
+import {useLocation } from 'react-router-dom'
 import '../styles/Logement.css'
-import bannerImg1 from '../assets/banner-img-1.png'
-import bannerImg2 from '../assets/banner-img-2.png'
-import background from '../assets/Background.png'
 import Tag from '../layout/Tag'
 import Stars from '../layout/Stars'
 import Carrousel from '../layout/Carrousel'
 import Dropdown from '../layout/Dropdown'
+import Erreur404 from '../pages/Erreur404'
 
 export default function Logement() {
 
-  const carrouselImages = [
-    <img key="img2" alt='test' src={background} />,
-    <img key="img1" alt='test' src={bannerImg2} />,
-    <img key="img3" alt='test' src={bannerImg1} />
-  ];
+  const location = useLocation();
 
+  // Vérifier si location.state existe
+  if (!location.state || !location.state.logement || !location.state.logement.logement) {
+    return <Erreur404 />;
+  }
+
+  const theLogement = location.state.logement.logement;
+  const carrouselImages = theLogement.props.pictures.map(
+    picture => <img key={picture} alt='test' src={picture} />
+  ); 
+  
   return (
     <>
       <Carrousel images={carrouselImages} />
@@ -23,46 +27,43 @@ export default function Logement() {
       <div className='logement'>
         <div className='logement-details'>
           <div className='logement-title'>
-          <h2 className='logement-title-head'>Cozy loft on the Canal Saint-Martin</h2>
-            <h4 className='logement-title-sub'>Paris, Île-de-France</h4>
+          <h2 className='logement-title-head'>{theLogement.props.title}</h2>
+            <h4 className='logement-title-sub'>{theLogement.props.location}</h4>
           </div>
 
           <div className='tag-container'>
-            <Tag name="Cozy" />
-            <Tag name="Canal" />
-            <Tag name="Paris 10" />
+            {theLogement.props.tags.map(
+              tag => <Tag key={tag} name={tag} />
+            )}
           </div>
         </div>
 
         <div className='logement-host'>
           <div className='logement-host-name'>
-            <span className='logement-host-detail'>Alexandre Dumas</span>
-            <img className='logement-host-picture' src='https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-2.jpg' alt='Host' />
+            <span className='logement-host-detail'>{theLogement.props.host.name}</span>
+            <img className='logement-host-picture' src={`${theLogement.props.host.picture}`} alt='Host' />
           </div>
           <Stars />
         </div>
 
       </div>
   
-
-
       <div className='logement-dropdowns'>
         <Dropdown
           classNameDesc = "dropdown-description-smaller"
           title="Description" 
-          description="Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). "
+          description={theLogement.props.description}
         />
 
         <Dropdown 
           classNameDesc = "dropdown-description-smaller"
           title="Equipements" 
-          description="Climatisation
-          Wi-Fi
-          Cuisine
-          Espace de travail
-          Fer à repasser
-          Sèche-cheveux
-          Cintres"
+          description={
+            <ul className='logement-equipments'>
+              {theLogement.props.equipments.map(item =><li className='logement-equipments-element' key={item}>{item}</li>)}
+            </ul> 
+          }
+            
         />
       </div>
 

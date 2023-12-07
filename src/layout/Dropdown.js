@@ -15,12 +15,12 @@ export default function Dropdown(about) {
     <div className="dropdown-container">
       <button className="dropdown-btn" onClick={toggleDescription}>
         {about.title}
-        <FaAngleUp className="dropdown-btn-icon" />
+        <FaAngleUp className={isActive ? "dropdown-btn-icon rotated" : "dropdown-btn-icon"} />
       </button>
       
-      <p className={isActive ? `${about.classNameDesc} active` : `${about.classNameDesc}`}>
+      <div className={isActive ? `${about.classNameDesc} active` : `${about.classNameDesc}`}>
         {about.description}
-      </p>
+      </div>
     </div>
 
   )

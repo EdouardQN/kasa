@@ -19,12 +19,14 @@ export default function Home() {
 
   return (
     <>
-      <Banner title = "Chez vous, partout et ailleurs"/>
-      
+      <Banner title = "Chez vous, partout et ailleurs" class='banner' />
       <div className='card-container'>
         {logements && logements.map(
           (logement) => {
-            return <Card key={logement.id} title={logement.title} cover={logement.cover} />
+            return <Card 
+              key={logement.id} 
+              props= {logement}
+            />
           }
         )}
       </div>
