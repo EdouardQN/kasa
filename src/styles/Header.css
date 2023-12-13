@@ -7,6 +7,7 @@
 @media only screen and (max-width: 600px){
     .header-main{
         font-size: 12px;
+        text-transform: uppercase;
         max-height: 48px;
         padding: 16px 0;
     }
@@ -27,4 +28,15 @@
     .header-main-logo{
         width: 120px;
     }
+}
+
+.header-main-link{
+    color: #FF6060;
+    text-decoration: none;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.header-main-link.active{
+    text-decoration: underline;
 }
