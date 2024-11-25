@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter, 
+  createHashRouter, 
   createRoutesFromElements,
   Route, 
   RouterProvider
@@ -14,13 +14,12 @@ import Erreur404 from './pages/Erreur404'
 //layout
 import Root from './layout/Root'
 
-const router = createBrowserRouter(
+const router = createHashRouter(  // Utiliser HashRouter ici
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="/logement/:id" element={<Logement />} />
-      
       <Route path="*" element={<Erreur404 />} />
     </Route>
   )
