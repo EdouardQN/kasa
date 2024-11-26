@@ -9,7 +9,7 @@ export default function Home() {
   const [logements, setLogements] = useState(null)
 
   useEffect(() => {
-    fetch('/kasa/logements.json')
+    fetch('/logements.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
